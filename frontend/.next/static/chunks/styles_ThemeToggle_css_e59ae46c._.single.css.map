@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/styles/ThemeToggle.css"],"sourcesContent":["/* src/styles/ThemeToggle.css */\r\n\r\n/* Define the transition for a smooth animation */\r\n.theme-toggle-button {\r\n  transition: transform 0.3s ease-in-out;\r\n}\r\n\r\n/* Add a hover effect to the button */\r\n.theme-toggle-button:hover {\r\n  transform: scale(1.1);\r\n}\r\n\r\n/* Define the keyframes for a simple rotation animation */\r\n@keyframes rotate-light {\r\n  from {\r\n    transform: rotate(0deg);\r\n  }\r\n  to {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n@keyframes rotate-dark {\r\n  from {\r\n    transform: rotate(0deg);\r\n  }\r\n  to {\r\n    transform: rotate(-360deg);\r\n  }\r\n}\r\n\r\n/* Apply the animation when the button is in its dark or light state */\r\n.theme-toggle-button.light-mode-icon {\r\n  animation: rotate-light 1s linear infinite;\r\n}\r\n\r\n.theme-toggle-button.dark-mode-icon {\r\n  animation: rotate-dark 1s linear infinite;\r\n}\r\n"],"names":[],"mappings":"AAGA;;;;AAKA;;;;AAKA;;;;;;;;;;AASA;;;;;;;;;;AAUA;;;;AAIA"}}]
+}

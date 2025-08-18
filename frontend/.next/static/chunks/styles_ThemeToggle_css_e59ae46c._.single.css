@@ -1,0 +1,38 @@
+/* [project]/styles/ThemeToggle.css [app-client] (css) */
+.theme-toggle-button {
+  transition: transform .3s ease-in-out;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes rotate-light {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-dark {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.theme-toggle-button.light-mode-icon {
+  animation: 1s linear infinite rotate-light;
+}
+
+.theme-toggle-button.dark-mode-icon {
+  animation: 1s linear infinite rotate-dark;
+}
+
+/*# sourceMappingURL=styles_ThemeToggle_css_e59ae46c._.single.css.map*/
