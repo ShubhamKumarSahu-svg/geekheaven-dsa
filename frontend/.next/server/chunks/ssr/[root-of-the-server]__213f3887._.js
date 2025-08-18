@@ -1,10 +1,10 @@
 module.exports = {
 
 "[project]/.next-internal/server/app/questions/page/actions.js [app-rsc] (server actions loader, ecmascript)": ((__turbopack_context__) => {
+"use strict";
 
-var { m: module, e: exports } = __turbopack_context__;
-{
-}}),
+__turbopack_context__.s({});
+}),
 "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)": ((__turbopack_context__) => {
 
 __turbopack_context__.n(__turbopack_context__.i("[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript)"));
