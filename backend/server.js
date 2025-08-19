@@ -11,7 +11,7 @@ import userRoutes from './routes/userRoutes.js';
 
 doEnv();
 const app = express();
-const portNum = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.set('trust proxy', 1);
 
@@ -49,8 +49,8 @@ async function runServer() {
     await connectThing();
     console.log('db ok');
 
-    app.listen(portNum, () => {
-      console.log(`server up at http://localhost:${portNum}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`🚀 server up at port ${PORT}`);
     });
   } catch (err) {
     console.error('DB connection failed:', err.message);
