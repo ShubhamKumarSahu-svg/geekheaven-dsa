@@ -25,7 +25,7 @@ myApp.use('/api/v1/auth', authStuff);
 myApp.use('/api/v1/user', userStuff);
 
 myApp.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/out/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/out/index.html'));
 });
 
 async function runServer() {
