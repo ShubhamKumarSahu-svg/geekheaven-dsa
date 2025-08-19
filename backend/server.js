@@ -1,4 +1,3 @@
-import cors from 'cors';
 import { config as doEnv } from 'dotenv';
 import express from 'express';
 import path from 'path';
@@ -15,18 +14,10 @@ const PORT = process.env.PORT || 5000;
 
 app.set('trust proxy', 1);
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || '*',
-    credentials: true,
-  })
-);
-
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 const staticPath = path.join(__dirname, '../frontend/out');
 
 app.use(express.static(staticPath));
@@ -38,22 +29,18 @@ app.use('/api/v1/user', userRoutes);
 app.get('*', (req, res, next) => {
   const indexFile = path.join(staticPath, 'index.html');
   res.sendFile(indexFile, (err) => {
-    if (err) {
-      next();
-    }
+    if (err) next(err);
   });
 });
 
 async function runServer() {
   try {
     await connectThing();
-    console.log('db ok');
-
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 server up at port ${PORT}`);
     });
   } catch (err) {
-    console.error('DB connection failed:', err.message);
+    console.error(err.message);
     process.exit(1);
   }
 }
