@@ -4,12 +4,22 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "seed": "node backend/lib/seeder.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/server.js",
+    "seed": "node backend/lib/seeder.js",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "node backend/server.js",
+    "start-frontend": "cd frontend && npm run start"
+>>>>>>> 5597ce6852e601b49e401c30d5935b22f7b4db83
   },
   "keywords": [],
   "author": "",
