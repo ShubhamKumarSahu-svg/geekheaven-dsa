@@ -1,45 +1,27 @@
 {
   "name": "web_d_geekheaven_selection",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client": "npm run dev --prefix client",
+    "client": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "seed": "node backend/lib/seeder.js"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon backend/server.js",
     "seed": "node backend/lib/seeder.js",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
-    "start-backend": "node backend/server.js",
-    "start-frontend": "cd frontend && npm run start"
->>>>>>> 5597ce6852e601b49e401c30d5935b22f7b4db83
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "axios": "1.11.0",
-    "bcryptjs": "3.0.2",
-    "cors": "2.8.5",
-    "cros": "1.1.0",
-    "dotenv": "17.2.1",
-    "express": "5.1.0",
-    "express-rate-limit": "8.0.1",
-    "framer-motion": "12.23.12",
-    "jsonwebtoken": "9.0.2",
-    "mongoose": "8.17.1",
-    "nodemon": "3.1.10"
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.1"
   },
   "devDependencies": {
-    "@types/dom-speech-recognition": "0.0.6",
-    "concurrently": "9.2.0"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.2"
   }
 }
