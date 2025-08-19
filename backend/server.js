@@ -18,7 +18,7 @@ let portNum = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-myApp.use(express.static(path.join(__dirname, '../client/out')));
+myApp.use(express.static(path.join(__dirname, '../frontend/out')));
 
 myApp.use('/api/v1/content', contentStuff);
 myApp.use('/api/v1/auth', authStuff);
