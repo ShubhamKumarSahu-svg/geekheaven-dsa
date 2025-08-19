@@ -11,33 +11,56 @@ import userStuff from './routes/userRoutes.js';
 
 doEnv();
 const myApp = express();
-myApp.use(cors({}));
-myApp.use(express.json());
-let portNum = process.env.PORT || 5000;
+const portNum = process.env.PORT || 5000;
 
+// CORS (restrict in prod with CLIENT_URL env var)
+myApp.use(
+  cors({
+    origin: process.env.CLIENT_URL || '*',
+    credentials: true,
+  })
+);
+
+myApp.use(express.json());
+
+// __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-myApp.use(express.static(path.join(__dirname, '../frontend/out')));
+// Path to static Next.js export
+const staticPath = path.join(__dirname, '../frontend/out');
 
+// Serve static files *only if they exist*
+myApp.use(express.static(staticPath));
+
+// API routes
 myApp.use('/api/v1/content', contentStuff);
 myApp.use('/api/v1/auth', authStuff);
 myApp.use('/api/v1/user', userStuff);
 
-myApp.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/out/index.html'));
+// Catch-all route: send index.html if export exists
+myApp.get('*', (req, res, next) => {
+  const indexFile = path.join(staticPath, 'index.html');
+  res.sendFile(indexFile, (err) => {
+    if (err) {
+      // If out/index.html doesn’t exist, skip → avoids crashing
+      next();
+    }
+  });
 });
 
 async function runServer() {
   try {
     await connectThing();
-    console.log('db ok');
-    myApp.listen(portNum, function () {
-      console.log('server up at', portNum);
+    console.log('✅ db ok');
+
+    myApp.listen(portNum, () => {
+      console.log(`🚀 server up at http://localhost:${portNum}`);
     });
   } catch (err) {
-    console.log(err.message);
+    console.error('❌ DB connection failed:', err.message);
     process.exit(1);
   }
 }
+
 runServer();
