@@ -50,7 +50,7 @@ export default function DashboardPage() {
     const fetchTotalQuestions = async () => {
       setIsLoadingData(true);
       try {
-        const response = await fetch('http://localhost:5000/api/v1/content');
+        const response = await fetch('/api/v1/content');
         const result = await response.json();
 
         if (!result?.data) throw new Error('Invalid API response');
