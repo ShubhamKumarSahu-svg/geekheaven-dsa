@@ -91,9 +91,7 @@ function QuestionsPageContent() {
       });
 
       try {
-        const response = await fetch(
-          `http://localhost:5000/api/v1/content?${params.toString()}`
-        );
+        const response = await fetch(`/api/v1/content?${params.toString()}`);
         if (!response.ok) throw new Error('Failed to fetch questions');
         const result = await response.json();
         setCategories(result.data);
