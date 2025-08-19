@@ -60,14 +60,11 @@ export function AuthModal() {
 
     const endpoint = isLoginView ? 'login' : 'register';
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/v1/auth/${endpoint}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(values),
-        }
-      );
+      const response = await fetch(`/api/v1/auth/${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
 
       const data = await response.json();
 

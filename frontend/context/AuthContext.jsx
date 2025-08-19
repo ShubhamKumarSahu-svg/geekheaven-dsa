@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUserProfile = async (authToken) => {
     try {
-      const res = await fetch('http://localhost:5000/api/v1/user/profile', {
+      const res = await fetch('/api/v1/user/profile', {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       if (!res.ok) throw new Error('Failed to fetch profile');
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
     setUser({ ...user, [listName]: updatedList });
 
     try {
-      const res = await fetch(`http://localhost:5000/api/v1/user/${endpoint}`, {
+      const res = await fetch(`/api/v1/user/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
