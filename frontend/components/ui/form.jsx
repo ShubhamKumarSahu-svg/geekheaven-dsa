@@ -127,13 +127,4 @@ export function FormMessage({ className, ...props }) {
   );
 }
 
-export {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  useFormField,
-};
+export { Form };
