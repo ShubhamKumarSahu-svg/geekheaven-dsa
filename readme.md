@@ -12,3 +12,7 @@ I strengthened my foundation through Colt Steele’s Web Developer Bootcamp and 
 Currently, I’m exploring Next.js to take my full-stack skills to the next level, while also expanding into Generative AI. I’ve learned to design and build Agentic AI applications, blending AI with modern web technologies.
 
 I enjoy solving problems, experimenting with new tools, and constantly pushing myself to improve. This project is just one step in my journey—I’m committed to taking web development and AI to a much greater extent in the future.
+
+### developed link
+
+https://geekheaven-dsa.onrender.com
